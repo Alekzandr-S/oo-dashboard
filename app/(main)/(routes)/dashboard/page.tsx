@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/sidebar"
 import data from "./data.json"
 import SummaryCards from "@/components/section-cards"
-import { ApplicationsTable } from "@/components/dashboard/widgets/ApplicationsTable"
+import { ApplicationsTable } from "@/components/dashboard/table/ApplicationsTable"
 
 export default function Page() {
   return (

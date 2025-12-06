@@ -15,18 +15,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const {user} = useCurrentUser();
+  const {user, loading} = useCurrentUser();
   const router = useRouter()
 
-  // useEffect(() => {
-  //   if(!user) {
-  //     router.replace("/login")
-  //   }
-  // }, [user])
+  useEffect(() => {
+    if(!loading && !user) {
+      router.replace("/login")
+    }
+  }, [loading, user])
 
+  if(loading) return <div className="p-6 min-h-screen flex justify-center items-center">Loading...</div>
   if (!user) return null
   
-  return (
+  return (  
     <SidebarProvider>
       {/* <AppSidebar /> */}
       <AppSidebar />

@@ -7,6 +7,7 @@ interface UserContextProps {
   user: User | null
   setUser: (user: User | null) => void
   logout: () => void
+  loading: boolean
 }
 
 const UserContext = createContext<UserContextProps | null>(null)
@@ -15,6 +16,7 @@ const  STORAGE_KEY = "portal-user"
 
 export function UserProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     if (typeof window === "undefined") return
@@ -27,16 +29,15 @@ export function UserProvider({ children }: { children: ReactNode }) {
     } catch (error) {
       console.error("Failed to parse stored user", error)
     }
+    setLoading(false)
   }, []);
 
   useEffect(() => {
-    if (typeof window === "undefined") return
-    if (user) {
-      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(user))
-    } else {
-      window.localStorage.removeItem(STORAGE_KEY)
+    if(!loading) {
+      if(user) localStorage.setItem(STORAGE_KEY, JSON.stringify(user))
+      else localStorage.removeItem(STORAGE_KEY)
     }
-  }, [user]);
+  }, [user, loading]);
 
   const logout = () => {
     setUser(null)
@@ -46,7 +47,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
   }
   
   return (
-    <UserContext.Provider value={{ user, setUser, logout }}>
+    <UserContext.Provider value={{ user, setUser, logout, loading }}>
       {children}
     </UserContext.Provider>
   )

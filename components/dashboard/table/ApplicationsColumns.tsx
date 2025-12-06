@@ -71,7 +71,7 @@ export function createApplicationColumns(
             </>
           )}
 
-          <DropdownMenu modal={false}>
+          {/* <DropdownMenu modal={false}>
             <DropdownMenuTrigger asChild>
               <Button size="icon-sm" variant="outline"><MoreHorizontal/></Button>
             </DropdownMenuTrigger>
@@ -81,7 +81,7 @@ export function createApplicationColumns(
                 <DropdownMenuItem onSelect={() => onView(row.original)}>View details</DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
         </div>
       ),
     }
