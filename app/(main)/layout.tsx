@@ -6,6 +6,7 @@ import { AppSidebar } from "@/components/dashboard/sidebar/app-sidebar";
 import { useCurrentUser } from "@/components/providers/UserProvider";
 import { useRouter } from "next/navigation";
 import { use, useEffect } from "react";
+import Header from "@/components/dashboard/header/header";
 // import { AppSidebar } from "@/components/app-sidebar";
 
 
@@ -30,7 +31,7 @@ export default function RootLayout({
       {/* <AppSidebar /> */}
       <AppSidebar />
       <SidebarInset>
-        {/* <Header /> */}
+        <Header />
         <main className="p4">{children}</main>
       </SidebarInset>
     </SidebarProvider>
