@@ -22,7 +22,7 @@ export default function ApplicationsToolbar({
   const [search, setSearch] = useState("")
 
   return (
-    <div className="flex flex-wrap gap-3 items-center justify-between mb-4">
+    <div className="flex flex-wrap gap-3 mt-4 items-center justify-between mb-4">
 
       {/* Search Input */}
       <Input

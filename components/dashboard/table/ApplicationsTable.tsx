@@ -2,7 +2,7 @@
 
 import { useCurrentUser } from "@/components/providers/UserProvider"
 import { ApplicationTableRow, getApplicationTableData } from "@/lib/mock/data";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useApplicationActions } from "./ApplicationsAction";
 import { flexRender, getCoreRowModel, useReactTable } from "@tanstack/react-table";
 import { createApplicationColumns } from "./ApplicationsColumns";
@@ -27,15 +27,17 @@ export function ApplicationsTable() {
 
   const actions = useApplicationActions(role, userId, setLocalData)
 
-  const filterData = localData.filter(row => {
-    const matchesSearch = row.title.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase());
-    const matchesStatus = filterStatus === "all" || row.status === filterStatus;
-    const matchesPayment = filterPayment === "all" || row.paymentStatus === filterPayment;
-    return matchesSearch && matchesStatus && matchesPayment;
-  })
+  const filteredData = useMemo(() => {
+    return localData.filter(row => {
+      const matchesSearch = row.title.toLowerCase().includes(searchTerm.toLowerCase())
+      const matchesStatus = filterStatus === "all" || row.status === filterStatus
+      const matchesPayment = filterPayment === "all" || row.paymentStatus === filterPayment
+      return matchesSearch && matchesStatus && matchesPayment
+    })
+  }, [localData, searchTerm, filterStatus, filterPayment])
   
   const table = useReactTable({
-    data: filterData,
+    data: filteredData,
     columns: createApplicationColumns(role, (row) => {
       setSelected(row)
       setDetailOpen(true)
@@ -55,12 +57,12 @@ export function ApplicationsTable() {
 
   return (
     <div className="rounded-xl border mt-6 px-4 lg:px-6 overflow-hidden">
-      {/* <ApplicationsToolbar 
+      <ApplicationsToolbar 
         onSearch={setSearchTerm}
         onFilterStatus={setFilterStatus}
         onFilterPayment={setFilterPayment}
         onSort={handleSort}
-      /> */}
+      />
       <Table>
         <TableHeader className="bg-muted/50">
           {table.getHeaderGroups().map(hg => (
