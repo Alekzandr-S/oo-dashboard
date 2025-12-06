@@ -8,7 +8,10 @@ export default function Header() {
   const { user } = useCurrentUser();
 
   return (
-    <header className="flex h-14 items-center gap-4 border-b px-4">
+    <header 
+      className="flex h-14 items-center gap-4 border-b px-4"
+      // className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12"
+    >
       <SidebarTrigger />
       <Separator orientation="vertical" className="h-6" />
 

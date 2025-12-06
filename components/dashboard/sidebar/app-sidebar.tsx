@@ -46,12 +46,6 @@ const supervisorNav = [
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const {user} = useCurrentUser();
   const items = user?.role === "supervisor" ? supervisorNav : officerNav;
-
-  const userData = {
-    name: user?.name,
-    email: user?.email,
-    avatar: user?.avatar
-  }
   
   return (
     <Sidebar collapsible="icon" {...props}>
@@ -72,7 +66,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarContent>
 
       <SidebarFooter>
-        <NavUser user={userData}/>
+        <NavUser />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>

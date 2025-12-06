@@ -18,16 +18,17 @@ export default function RootLayout({
   const {user} = useCurrentUser();
   const router = useRouter()
 
-  useEffect(() => {
-    if(!user) {
-      router.replace("/login")
-    }
-  }, [user])
+  // useEffect(() => {
+  //   if(!user) {
+  //     router.replace("/login")
+  //   }
+  // }, [user])
 
   if (!user) return null
   
   return (
     <SidebarProvider>
+      {/* <AppSidebar /> */}
       <AppSidebar />
       <SidebarInset>
         <Header />
