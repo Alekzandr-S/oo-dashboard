@@ -8,7 +8,7 @@ export default function LoginPage() {
     <div className="grid min-h-svh lg:grid-cols-2">
       <div 
         className="flex flex-col gap-4 p-6 md:p-10"
-        style={{ clipPath: 'polygon(0 0, 100% 0%, 70% 100%, 0 100%)' }}
+        // style={{ clipPath: 'polygon(0 0, 100% 0%, 70% 100%, 0 100%)' }}
       >
         <div className="flex justify-center gap-2 md:justify-start">
             <div className="bg-primar bg-transparent flex text-primary-foreground size-64 items-center justify-center rounded-md">
@@ -52,15 +52,17 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
-      <div className="bg-muted relative hidden lg:block">
-        <Image
+      <div 
+        className="bg-muted bg-custom-gradient relative hidden lg:block"
+        style={{ clipPath: 'polygon(8% 0, 100% 0%, 100% 100%, 0 100%)' }}
+      >
+        {/* <Image
           width={1800}
           height={1800}
           src="/images/hero-1.png"
           alt="Image"
-          // style={{ clipPath: 'polygon(0 0, 100% 0%, 80% 100%, 0 100%)' }}
           className="absolute inset0 h-full w-full object-cover darkbrightness-[0.2] darkgrayscale"
-          />
+          /> */}
       </div>
       {/* <path fill="#fff" d="M647.5 80.8V48.2a24.2 24.2 0 10-5.4 0v27.5a23.7 23.7 0 00-7.3-8.4c-7.9-5.5-18.3-5.5-30.3-5.5-11.1 0-20.8 0-27.3-4.5a20.3 20.3 0 01-7-9.7 24.2 24.2 0 10-6 .8h.5c2 6 5.2 10.3 9.4 13.3 8 5.5 18.3 5.5 30.4 5.5 11.1 0 20.7 0 27.2 4.5a20.3 20.3 0 017.1 9.7 24.2 24.2 0 108.7-.6M545.4 24.2A18.8 18.8 0 11564.2 43a18.8 18.8 0 01-18.8-18.8m80.6 0A18.8 18.8 0 11644.8 43 18.8 18.8 0 01626 24.2"></path> */}
     </div>
