@@ -55,9 +55,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </div>
         <div className="grid flex-1 gap-0.5">
           <span className="font-semibold text-sm">Digital Portal</span>
-          <span className="text-muted-foreground text-xs">
+          {/* <span className="text-muted-foreground text-xs">
             {user?.role === "supervisor" ? "Supervisor" : "Officer"}
-          </span>
+          </span> */}
         </div>
       </SidebarHeader>
 

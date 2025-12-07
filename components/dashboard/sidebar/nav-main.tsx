@@ -12,6 +12,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 export interface NavItem {
   title: string;
@@ -21,6 +22,7 @@ export interface NavItem {
 
 export function NavMain({ items }: { items: NavItem[] }) {
   const pathname = usePathname();
+  const [disabled, setDisabled] = useState(true);
 
   return (
     <SidebarGroup>
@@ -44,7 +46,11 @@ export function NavMain({ items }: { items: NavItem[] }) {
                       : "text-muted-foreground hover:bg-accent hover:text-accent-foreground hover:border-primary/50"
                   )}
                 >
-                  <Link href={item.href} className="flex items-center gap-2">
+                  <Link  
+                    href={item.href} 
+                    className="flex items-center gap-2"
+                    onClick={(e) => disabled && e.preventDefault()}
+                  >
                     <item.icon
                       className={cn(
                         "h-4 w-4 transition-colors",

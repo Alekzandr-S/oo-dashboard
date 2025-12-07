@@ -32,11 +32,14 @@ import {
 import { useCurrentUser } from "./providers/UserProvider"
 import { useRouter } from "next/navigation"
 import { toast } from "sonner"
+import { useState } from "react"
 
 export function NavUser() {
   const { isMobile } = useSidebar()
   const {user, logout} = useCurrentUser();
   const router = useRouter();
+  const [disabled, setDisabled] = useState(true);
+  
 
   const handleLogout = () => {
     logout()
@@ -91,11 +94,11 @@ export function NavUser() {
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem>
+              <DropdownMenuItem disabled={disabled}>
                 <BadgeCheck />
                 Account
               </DropdownMenuItem>
-              <DropdownMenuItem>
+              <DropdownMenuItem disabled={disabled}>
                 <Bell />
                 Notifications
               </DropdownMenuItem>
