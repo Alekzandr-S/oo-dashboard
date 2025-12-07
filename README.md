@@ -6,6 +6,15 @@ A modern role-based dashboard built with **Next.js, Tailwind, Shadcn UI, Sonner 
 
 The project demonstrates a production-grade frontend architecture using modular UI components, mock-data logic, analytics visualization, and real-world UX decision-making.
 
+##  Demo Credentials
+
+Login is mocked — select user from toggle or replace with real auth later.
+
+|       Role     |         Email         |    Password   |
+|       ---      |          ---          |      ---      |
+| **Supervisor** | `supervisor@demo.com` | `password123` |
+| **Officer**    | `officer@demo.com`    | `password123` |
+
 ---
 
 ##  Features
