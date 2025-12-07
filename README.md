@@ -1,5 +1,51 @@
 
+# Digital Portal Dashboard
+
+A modern role-based dashboard built with **Next.js, Tailwind, Shadcn UI, Sonner & Recharts**, designed to manage applications, payments and workflow for two personas:  
+**Customer Service Officer** & **Supervisor**.
+
+The project demonstrates a production-grade frontend architecture using modular UI components, mock-data logic, analytics visualization, and real-world UX decision-making.
+
 ---
+
+##  Features
+
+###  Intelligent UX & Layout
+- Clean, focused login experience (no header, no clutter)
+- Dashboard reveals key actions within the first **5–10 seconds**
+- Summary cards provide high-level insight at a glance
+- Charts visualize workflow progress & workload trend
+- Search + filter powered tables for quick navigation
+- Role-adaptive navigation & permissions
+
+###  Role-Based Behaviors
+|             Feature           |       Officer       |   Supervisor  |
+|              ---              |         ---         |      ---      |  
+| View only their submissions   |           ✔         |       –       |
+| Approve / Reject applications |           –         |       ✔       |
+| Make payment for pending apps |           ✔         |       –       |
+| View analytics across system  | Limited (self only) | Full overview |
+
+---
+
+##  Tech Stack
+
+**Frontend**
+- Next.js (App Router)
+- TypeScript
+- TailwindCSS
+- Shadcn UI Components
+- Sonner Toast Notifications
+
+**Data & Logic**
+- Mock DB (replaceable with API later)
+- React context for authenticated user state
+- Recharts for data visualization
+
+---
+
+##  Project Structure
+
 
 #  UX Design Rationale
 

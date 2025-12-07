@@ -29,7 +29,8 @@ export default function RootLayout({
   
   return (  
     <SidebarProvider>
-      {/* <AppSidebar /> */}
+      {/*not required */}
+      {/* <AppSidebar /> */} 
       <AppSidebar />
       <SidebarInset>
         <Header />
