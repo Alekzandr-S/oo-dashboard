@@ -7,9 +7,9 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 
 // Use your custom color variables
 const STATUS_COLORS: Record<"Approved" | "Pending" | "Rejected", string> = {
-  Approved: "#3B25D8",
-  Pending: "#57C785",
-  Rejected: "#EDDD53",
+  Rejected: "#fb2c36",
+  Approved: "#57C785",
+  Pending: "#EDDD53",
 }
 
 
