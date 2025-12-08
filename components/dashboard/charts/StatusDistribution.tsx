@@ -32,7 +32,10 @@ export function StatusDistribution() {
   const data = getStatusData(user.role, user.id)
 
   return (
-    <Card className="w-full h-full @container/card">
+    <Card className="w-full h-full @container/card 
+             shadow-sm hover:shadow-md 
+             transition-all duration-200 
+             hover:-translate-y-0.5">
       <CardHeader>
         <CardTitle>Application Status Distribution</CardTitle>
         <CardDescription className="text-sm">

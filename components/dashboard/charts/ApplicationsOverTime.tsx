@@ -58,7 +58,12 @@ export function ApplicationsOverTime(){
   const data=range==="7d"?raw.slice(-1):range==="30d"?raw.slice(-2):raw
 
   return(
-    <Card className="w-full h-full @container/card">
+    <Card 
+      className="w-full h-full @container/card 
+             shadow-sm hover:shadow-md 
+             transition-all duration-200 
+             hover:-translate-y-0.5"
+    >
       <CardHeader>
         <CardTitle>Applications Over Time</CardTitle>
         <CardDescription>
@@ -86,7 +91,7 @@ export function ApplicationsOverTime(){
       </CardHeader>
 
       <CardContent className="px-2 pt-3 sm:px-4">
-        <ChartContainer config={chartConfig} className="h-[260px] w-full">
+        <ChartContainer config={chartConfig} className="h-[260px] w-full animate-[fadeInUp_0.35s_ease-out]">
           <AreaChart data={data}>
             <defs>
               <linearGradient id="fillApps">

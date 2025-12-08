@@ -108,7 +108,10 @@ export default function SummaryCards() {
         return (
           <Card
             key={item.key}
-            className="@container/card lg:bg-linear-to-t from-primary/5 to-card shadow-xs"
+            // className="@container/card lg:bg-linear-to-t from-primary/5 to-card shadow-xs"
+            className="@container/card bg-linear-to-t from-primary/5 to-card shadow-sm 
+             transition-all duration-200 
+             hover:-translate-y-1 hover:shadow-lg hover:border-primary/20"
           >
             <CardHeader className="flex flex-row items-start justify-between gap-2">
               <div className="space-y-1">
@@ -119,7 +122,12 @@ export default function SummaryCards() {
               </div>
 
               <CardAction className="flex flex-col items-end gap-2">
-                <Badge variant="outline" className="gap-1 flex items-center">
+                <Badge 
+                  variant="outline" 
+                  className="gap-1 flex items-center text-xs 
+                              border-primary/20 bg-primary/5
+                              transition-colors"
+                >
                   {trend.icon}
                   {trend.percent}
                 </Badge>
@@ -130,7 +138,9 @@ export default function SummaryCards() {
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="h-8 w-8 text-muted-foreground"
+                      className="h-8 w-8 text-muted-foreground 
+                                hover:bg-muted/60 
+                                transition-colors"
                       aria-label={`Open actions for ${item.label}`}
                     >
                       <MoreHorizontal className="h-4 w-4" />

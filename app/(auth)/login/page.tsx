@@ -7,16 +7,9 @@ export default function LoginPage() {
   return (
     <div className="grid min-h-svh lg:grid-cols-2">
       <div 
-        className="bg-muted bg-custom-gradient relative hidden lg:block"
+        className="bg-muted bg-animated-gradient relative hidden lg:block"
         style={{ clipPath: 'polygon(0% 0, 80% 0%, 100% 100%, 0% 100%)' }}
       >
-        {/* <Image
-          width={1800}
-          height={1800}
-          src="/images/hero-1.png"
-          alt="Image"
-          className="absolute inset0 h-full w-full object-cover darkbrightness-[0.2] darkgrayscale"
-          /> */}
       </div>
       <div 
         className="flex flex-col gap-4 p-6 md:p-10"
