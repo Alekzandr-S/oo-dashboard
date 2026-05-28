@@ -13,7 +13,7 @@ export const mockUsers: User[] = [
     name: "Jane Officer",
     avatar: "/avatars/shadcn.jpg",
     email: "officer@demo.com",
-    password: "password123",
+    password: "passwd123",
     role: "officer"
   },  
   {
@@ -21,7 +21,7 @@ export const mockUsers: User[] = [
     name: "John Supervisor",
     avatar: "/avatars/shadcn.jpg",
     email: "supervisor@demo.com",
-    password: "password123",
+    password: "passwd123",
     role: "supervisor"
   },  
 ]  

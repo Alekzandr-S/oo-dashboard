@@ -144,14 +144,6 @@
     animation: gradientMove 15s ease infinite;
 }
 
-/* .dark .bg-animated-gradient {
-  background: linear-gradient(166deg,
-    oklch(0.488 0.243 264.376) 0%,
-    oklch(0.696 0.17 162.48) 50%,
-    oklch(0.769 0.188 70.08) 100%
-  );
-  background-size: 300% 300%;          
-} */
 
 .bg-animated-gradient {
   animation: gradientMove 10s ease infinite, glowPulse 5s ease-in-out infinite;
@@ -162,7 +154,6 @@
   50%     { filter: brightness(1.15); }
 }
 
-/* Gradient Animation */
 @keyframes gradientMove {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }

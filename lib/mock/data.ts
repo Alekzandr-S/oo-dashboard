@@ -65,7 +65,7 @@ export interface ApplicationTableRow {
   status: "pending" | "approved" | "rejected"
   paymentStatus: "paid" | "pending"
   date: string
-  owner?: string   // only visible to supervisors
+  owner?: string   
 }
 
 
